@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clone the Git repository
-                git 'https://github.com/Utsav0701/day15.git'
+                git branch: 'main',url: 'https://github.com/Utsav0701/day15.git'
             }
         }
 
