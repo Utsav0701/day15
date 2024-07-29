@@ -27,8 +27,8 @@ pipeline {
             steps {
                 script {
                     // Log in to Docker Hub and push the image
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
-                        docker.image(DOCKER_IMAGE_NAME).push('latest')
+                    docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
+                        docker.image(DOCKER_IMAGE_NAME).push()
                     }
                 }
             }
@@ -38,7 +38,7 @@ pipeline {
     post {
         always {
             // Clean up
-            cleanWs()
+            echo "finish"
         }
     }
 }
